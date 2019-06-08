@@ -30,6 +30,8 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 
 4. In order to follow the Single Responsibility Principle, I extracted lots of the code to different functions in order to make it easier to read and understand.
 
+5. Once I had done this it was much easier to  add the Conjured function. 
+
 ## Acknowledgements
 
 This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/).
