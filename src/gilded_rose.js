@@ -1,11 +1,3 @@
-class Item {
-  constructor(name, sellIn, quality){
-    this.name = name;
-    this.sellIn = sellIn;
-    this.quality = quality;
-    this.maxQuality = 50;
-  }
-}
 
 class Shop {
   constructor(items=[]){
@@ -19,11 +11,7 @@ class Shop {
         this.decreaseQuality()
       }
       if (this.items[i].name == 'Aged Brie') {
-        // this.updateBrie(i);
-        this.increaseQuality()
-        if(this.items[i].sellIn < 0) {
-          this.increaseQuality()
-        }
+        this.updateBrie(i);
       }
       if (this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
         this.increaseQuality();
@@ -35,9 +23,9 @@ class Shop {
   }
 
   updateBrie(index) {
-    if (this.items[index].quality < 50) {
-      this.items[index].quality += 1
-      this.items[index].sellIn -= 1
+    this.increaseQuality();
+    if(this.items[index].sellIn < 0) {
+      this.increaseQuality()
     }
   }
 
@@ -80,6 +68,5 @@ class Shop {
   }
 }
 module.exports = {
-  Item,
   Shop
 }
