@@ -1,8 +1,9 @@
-
 class Shop {
+  
   constructor(items=[]){
     this.items = items;
   }
+
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
       this.updateSellIn(i)
@@ -14,8 +15,7 @@ class Shop {
         this.updateBrie(i);
       }
       if (this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
-        this.increaseQuality(i);
-        this.increaseQuality(i);
+        this.increaseDouble(i)
         this.updateBackstage(i)
         }
       }
@@ -50,6 +50,12 @@ class Shop {
   increaseQuality(index) {
     if (this.items[index].quality < 50) {
       this.items[index].quality += 1
+    }
+  }
+
+  increaseDouble(index) {
+    if(this.items[index].quality < 50) {
+      this.items[index].quality += 2
     }
   }
 
