@@ -1,5 +1,5 @@
 class Shop {
-  
+
   constructor(items=[]){
     this.items = items;
   }
@@ -62,6 +62,9 @@ class Shop {
   decreaseQuality(index) {
     if ((this.items[index].name != 'Aged Brie') && (this.items[index].name != 'Sulfuras, Hand of Ragnaros')) {
       if (this.items[index].quality > 0) {
+        this.items[index].quality -= 1
+      }
+      if (this.items[index].name == "Conjured"){
         this.items[index].quality -= 1
       }
     }
