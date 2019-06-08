@@ -29,7 +29,7 @@ class Shop {
             }
             if (this.items[i].sellIn < 6) {
               if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
+                this.increaseQuality();
               }
             }
           }
@@ -51,13 +51,19 @@ class Shop {
           }
         } else {
           if (this.items[i].quality < 50) {
-            this.items[i].quality = this.items[i].quality + 1;
+            increaseQuality();
           }
         }
       }
     }
 
     return this.items;
+  }
+
+  increaseQuality() {
+    for (var i = 0; i < this.items.length; i++) {
+      this.items[i].quality += 1
+    }
   }
 }
 module.exports = {
